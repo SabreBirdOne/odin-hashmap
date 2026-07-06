@@ -4,17 +4,25 @@ export default class HashMap {
         // (Number of elements / number of buckets) at which point to double the buckets.
         
         this.capacity = 16; 
-        // number of buckets
+        // number of buckets. Note: this.buckets.length === this.capacity at all times.
         
         this.buckets = new Array(this.capacity); 
         // Array of Linked Lists to store elements
+        // Each bucket / Linked List stores key-value pairs as elements
         
         this.numElements = 0; 
-
     }
 
     hash(key){
         /* takes a key to produce a hash code to a bucket*/
+        let hashCode = 0;
+
+        const primeNumber = 31;
+        for (let i = 0; i < key.length; i++) {
+            hashCode = (primeNumber * hashCode + key.charCodeAt(i)) % this.capacity;
+        }
+
+        return hashCode;
     }
 
     set(key, value){
