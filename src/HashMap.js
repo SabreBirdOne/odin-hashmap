@@ -1,5 +1,15 @@
 export default class HashMap {
     constructor(){
+        this.loadFactor = 0.75; 
+        // (Number of elements / number of buckets) at which point to double the buckets.
+        
+        this.capacity = 16; 
+        // number of buckets
+        
+        this.buckets = new Array(this.capacity); 
+        // Array of Linked Lists to store elements
+        
+        this.numElements = 0; 
 
     }
 

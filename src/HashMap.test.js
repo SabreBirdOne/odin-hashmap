@@ -1,16 +1,16 @@
 import HashMap from "./HashMap";
 
-const test = new HashMap() // or HashMap() if using a factory
+const testMap = new HashMap() // or HashMap() if using a factory
 
-test.set('apple', 'red')
-test.set('banana', 'yellow')
-test.set('carrot', 'orange')
-test.set('dog', 'brown')
-test.set('elephant', 'gray')
-test.set('frog', 'green')
-test.set('grape', 'purple')
-test.set('hat', 'black')
-test.set('ice cream', 'white')
-test.set('jacket', 'blue')
-test.set('kite', 'pink')
-test.set('lion', 'golden')
+testMap.set('apple', 'red')
+testMap.set('banana', 'yellow')
+testMap.set('carrot', 'orange')
+testMap.set('dog', 'brown')
+testMap.set('elephant', 'gray')
+testMap.set('frog', 'green')
+testMap.set('grape', 'purple')
+testMap.set('hat', 'black')
+testMap.set('ice cream', 'white')
+testMap.set('jacket', 'blue')
+testMap.set('kite', 'pink')
+testMap.set('lion', 'golden')
