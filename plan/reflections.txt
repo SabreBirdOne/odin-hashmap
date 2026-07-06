@@ -1,0 +1,19 @@
+I've already known what a Linked List is like since RPI's data structures course
+So this project was easy. The only tedious part is doing it in JavaScript.
+
+Linked List's great benefit is constant time insertion and deletion, 
+because removing or inserting 1 element only requires modifying 
+the pointers around the target node, not depending on size of the entire
+linked list. 
+
+However, finding the position to insert or delete takes linear time
+in this particular implementation, as Nodes only point in one direction.
+I was more used to doubly Linked Lists, which had previousNode pointers 
+in every node.
+
+JavaScript garbage collection meant no need for manual heap memory management
+(allocation/freeing) like I had to do in C++ back at RPI's course. 
+
+I feel nostalgic. Data Structures hammered down pointer concepts early on, as if
+"If you forget everything later about Data Structures, 
+at least don't forget about POINTERS".
