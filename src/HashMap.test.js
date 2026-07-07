@@ -26,6 +26,13 @@ test("Initial color map test", ()=>{
     expect(testMap.numElements).toBe(12);
 })
 
+test("get() function test", ()=>{
+    const testMap = createColorMap();
+    expect(testMap.get('ice cream')).toBe('white');
+    expect(testMap.get('lion')).toBe('golden');  
+    
+})
+
 test("Doubling buckets test", ()=>{
     let testMap = createColorMap();
     testMap.set('moon', 'silver')

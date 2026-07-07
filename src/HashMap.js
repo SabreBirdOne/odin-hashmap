@@ -113,6 +113,24 @@ export default class HashMap {
     get(key){
         /* takes a key and returns the value assigned to this key. 
         If the key is not found, return null.*/
+
+        const index = this.hash(key) % this.capacity;
+        if (index < 0 || index >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+        }
+
+        const bucketAtIndex = this.buckets[index];
+        if (bucketAtIndex){
+            for (let currentNode = bucketAtIndex.headNode;
+                currentNode !== null;
+                currentNode = currentNode.nextNode){
+
+                if (currentNode.value[0] === key){
+                    return currentNode.value[1]
+                } 
+            }
+        }
+        return null;
     }
 
     has(key){
