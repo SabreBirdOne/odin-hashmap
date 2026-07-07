@@ -89,3 +89,14 @@ test("clear() function test", ()=>{
     expect(testMap.length()).toEqual(0);
     expect(testMap.buckets[0]).toBeUndefined()
 })
+
+test("keys() function test", ()=>{
+    const testMap = createColorMap();
+
+    const keys = testMap.keys();
+    expect(keys.length).toEqual(testMap.length());
+
+    for (const key of keys){
+        expect(testMap.has(key)).toBeTruthy();
+    }
+})

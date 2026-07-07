@@ -201,6 +201,19 @@ export default class HashMap {
 
     keys() {
         // returns an array containing all the keys inside the hash map.
+        let keys = new Array();
+        
+        for (let i = 0; i < this.buckets.length; i++){
+            const bucketAtIndex = this.buckets[i];
+            if (!bucketAtIndex) continue;
+            for (let currentNode = bucketAtIndex.headNode;
+                currentNode !== null;
+                currentNode = currentNode.nextNode){
+
+                keys.push(currentNode.value[0]);
+            }
+        }
+        return keys;            
     }
 
     values() {
