@@ -61,4 +61,19 @@ test("has() function test", ()=>{
     const testMap = createColorMap();
     expect(testMap.has('raven')).toBeFalsy();
     expect(testMap.has('lion')).toBeTruthy();
+});
+
+test("remove() function test", ()=>{
+    const testMap = createColorMap();
+    
+    let result = testMap.remove('raven');
+    expect(result).toBeFalsy();
+    expect(testMap.numElements).toBe(12);
+
+    // console.log(testMap.buckets[testMap.hash('lion')]);
+    result = testMap.remove('lion');
+
+    expect(result).toBeTruthy();
+    expect(testMap.numElements).toBe(11);
+    // console.log(testMap.buckets[testMap.hash('lion')]);
 })
