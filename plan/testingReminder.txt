@@ -1,0 +1,10 @@
+Great work implementing all the functions needed for the project
+
+However, there is still a whole set of tests to do.
+
+test the same functions again but after doubling the capacity
+(13 elements in a 16-capacity hashmap with 0.75 load factor).
+
+They should behave exactly the same, just a copy and paste of 
+the current test cases but add key-value pairs to trigger the
+bucket-doubling before testing each function.
