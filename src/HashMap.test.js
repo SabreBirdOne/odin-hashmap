@@ -14,3 +14,7 @@ testMap.set('ice cream', 'white')
 testMap.set('jacket', 'blue')
 testMap.set('kite', 'pink')
 testMap.set('lion', 'golden')
+
+test("placeholder test", () => {
+    expect(true).toBeTruthy();
+})
