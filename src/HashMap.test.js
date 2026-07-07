@@ -128,3 +128,15 @@ test("values() function test", ()=>{
         // console.log(values);
     }
 })
+
+test("entries() function test", ()=>{
+    const testMap = createColorMap();
+
+    const entries = testMap.entries();
+    expect(entries.length).toEqual(testMap.length());
+
+    for(const entry of entries){
+        expect(testMap.has(entry[0])).toBeTruthy();
+        expect(testMap.get(entry[0])).toEqual(entry[1]);
+    }
+})

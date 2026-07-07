@@ -238,5 +238,18 @@ export default class HashMap {
         Example: [[firstKey, firstValue], [secondKey, secondValue]]
         A hash map does not preserve insertion order.
         */
+        let entries = new Array();
+        
+        for (let i = 0; i < this.buckets.length; i++){
+            const bucketAtIndex = this.buckets[i];
+            if (!bucketAtIndex) continue;
+            for (let currentNode = bucketAtIndex.headNode;
+                currentNode !== null;
+                currentNode = currentNode.nextNode){
+
+                entries.push(currentNode.value);
+            }
+        }
+        return entries; 
     } 
 }
