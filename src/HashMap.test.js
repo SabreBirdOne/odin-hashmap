@@ -18,3 +18,6 @@ testMap.set('lion', 'golden')
 test("placeholder test", () => {
     expect(true).toBeTruthy();
 })
+
+testMap.set('moon', 'silver')
+console.log(testMap);
