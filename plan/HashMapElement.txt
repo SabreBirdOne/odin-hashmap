@@ -1,0 +1,11 @@
+HashMap.buckets is an array of Linked Lists. Each Linked List node's value property is a key-value pair
+
+Key-value pair needs to be its own data structure.
+Why not just an Array with 2 elements?
+
+buckets
+0
+1 --> [key, value] --> [key, value] --> null
+2
+...
+15
