@@ -36,9 +36,7 @@ export default class HashMap {
         when loadFactor is reached (this.numLength + 1 > loadFactor * this.capacity), double the number of buckets and rehash elements
         */
 
-        if (this.numElements + 1 > this.loadFactor * this.capacity){
-            console.log(`double up buckets when setting (${key}, ${value})`)
-            
+        if (this.numElements + 1 > this.loadFactor * this.capacity){ 
             // Copy the old buckets to a separate variable.
             const oldBuckets = structuredClone(this.buckets);
 

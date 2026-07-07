@@ -1,23 +1,36 @@
 import HashMap from "./HashMap";
 
-const testMap = new HashMap() // or HashMap() if using a factory
+function createColorMap(){
+    let map =  new HashMap() // or HashMap() if using a factory
 
-testMap.set('apple', 'red')
-testMap.set('banana', 'yellow')
-testMap.set('carrot', 'orange')
-testMap.set('dog', 'brown')
-testMap.set('elephant', 'gray')
-testMap.set('frog', 'green')
-testMap.set('grape', 'purple')
-testMap.set('hat', 'black')
-testMap.set('ice cream', 'white')
-testMap.set('jacket', 'blue')
-testMap.set('kite', 'pink')
-testMap.set('lion', 'golden')
+    map.set('apple', 'red')
+    map.set('banana', 'yellow')
+    map.set('carrot', 'orange')
+    map.set('dog', 'brown')
+    map.set('elephant', 'gray')
+    map.set('frog', 'green')
+    map.set('grape', 'purple')
+    map.set('hat', 'black')
+    map.set('ice cream', 'white')
+    map.set('jacket', 'blue')
+    map.set('kite', 'pink')
+    map.set('lion', 'golden') 
 
-test("placeholder test", () => {
-    expect(true).toBeTruthy();
+    return map;
+} 
+
+test("Initial color map test", ()=>{
+    const testMap = createColorMap();
+    expect(testMap.numElements <= testMap.capacity * testMap.loadFactor)
+    .toBeTruthy();
+    expect(testMap.numElements).toBe(12);
 })
 
-testMap.set('moon', 'silver')
-console.log(testMap);
+test("Doubling buckets test", ()=>{
+    let testMap = createColorMap();
+    testMap.set('moon', 'silver')
+
+    expect(testMap.numElements <= testMap.capacity * testMap.loadFactor)
+    .toBeTruthy();
+    expect(testMap.numElements).toBe(13);
+})
