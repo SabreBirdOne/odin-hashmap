@@ -56,3 +56,9 @@ test("Doubling buckets test", ()=>{
     expect(testMap.numElements).toBe(13);
     expect(testMap.capacity).toBe(32);
 })
+
+test("has() function test", ()=>{
+    const testMap = createColorMap();
+    expect(testMap.has('raven')).toBeFalsy();
+    expect(testMap.has('lion')).toBeTruthy();
+})

@@ -141,6 +141,23 @@ export default class HashMap {
 
     has(key){
         /* returns true if the key is in the hash map, else false */
+
+        const index = this.hash(key) % this.capacity;
+        if (index < 0 || index >= this.buckets.length) {
+            throw new Error("Trying to access index out of bounds");
+        }
+
+        const bucketAtIndex = this.buckets[index];
+        if (bucketAtIndex){
+            for (let currentNode = bucketAtIndex.headNode;
+                currentNode !== null;
+                currentNode = currentNode.nextNode){
+
+                if (currentNode.value[0] === key) return true;
+            }
+        }
+        return false;
+
     }
 
     remove(key){
