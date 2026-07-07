@@ -196,10 +196,6 @@ export default class HashMap {
     clear() {
         // removes all entries in the hash map.
         this.buckets = new Array(this.capacity); 
-        // Array of Linked Lists to store elements
-        // Each bucket / Linked List stores key-value pairs as elements
-        // Each key-value pair is a 2-tuple (JS Array)
-        
         this.numElements = 0; 
     } 
 

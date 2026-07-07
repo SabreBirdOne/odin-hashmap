@@ -82,3 +82,10 @@ test("length() function test", ()=>{
     const testMap = createColorMap();
     expect(testMap.length()).toEqual(testMap.numElements);
 })
+
+test("clear() function test", ()=>{
+    let testMap = createColorMap();
+    testMap.clear();
+    expect(testMap.length()).toEqual(0);
+    expect(testMap.buckets[0]).toBeUndefined()
+})
