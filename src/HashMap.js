@@ -218,6 +218,19 @@ export default class HashMap {
 
     values() {
         // returns an array containing all the values.
+        let values = new Array();
+        
+        for (let i = 0; i < this.buckets.length; i++){
+            const bucketAtIndex = this.buckets[i];
+            if (!bucketAtIndex) continue;
+            for (let currentNode = bucketAtIndex.headNode;
+                currentNode !== null;
+                currentNode = currentNode.nextNode){
+
+                values.push(currentNode.value[1]);
+            }
+        }
+        return values;    
     }
 
     entries() {

@@ -99,4 +99,32 @@ test("keys() function test", ()=>{
     for (const key of keys){
         expect(testMap.has(key)).toBeTruthy();
     }
+    // console.log(keys);
+})
+
+test("values() function test", ()=>{
+    const testMap = createColorMap();
+
+    const values = testMap.values();
+    expect(values.length).toEqual(testMap.length())
+    // Project Specifications said nothing about duplicates
+
+    for (const value of values){
+        let valueIsInMap = false;
+        for (const bucket of testMap.buckets){
+            if(bucket){
+                let currentNode = bucket.headNode;
+                while(currentNode !== null){
+                    if (currentNode.value[1] === value){
+                        valueIsInMap = true;
+                        break;
+                    } 
+                    currentNode = currentNode.nextNode;
+                }
+            }
+            if (valueIsInMap) break;
+        }
+        expect(valueIsInMap).toBeTruthy();
+        // console.log(values);
+    }
 })
