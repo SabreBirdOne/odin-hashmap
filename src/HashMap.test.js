@@ -77,3 +77,8 @@ test("remove() function test", ()=>{
     expect(testMap.numElements).toBe(11);
     // console.log(testMap.buckets[testMap.hash('lion')]);
 })
+
+test("length() function test", ()=>{
+    const testMap = createColorMap();
+    expect(testMap.length()).toEqual(testMap.numElements);
+})
