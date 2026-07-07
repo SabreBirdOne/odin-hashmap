@@ -92,11 +92,17 @@ export default class HashMap {
                     }
                 }
             }
-            
 
             if (keysInBucket.includes(key)){
                 // if the input key is contained in the bucket, then update the value of this key in the bucket.
-                console.log("key is in bucket")
+                let currentNode = this.buckets[index].headNode;
+                while(currentNode !== null){
+                    if (currentNode.value[0] === key) {
+                        currentNode.value[1] = value;
+                        break;
+                    }
+                    currentNode = currentNode.nextNode;
+                }
                 // size of the hash map is the same - numElements and capacity is the same.
             }
             else {  

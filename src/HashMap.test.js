@@ -30,6 +30,20 @@ test("get() function test", ()=>{
     const testMap = createColorMap();
     expect(testMap.get('ice cream')).toBe('white');
     expect(testMap.get('lion')).toBe('golden');  
+})
+
+test("set() function test: updating existing key-value pairs", ()=>{
+    let testMap = createColorMap();
+    testMap.set('ice cream', 'vanilla');
+    testMap.set('lion', 'orange');
+
+    expect(testMap.get('ice cream')).toBe('vanilla');
+    expect(testMap.get('lion')).toBe('orange');
+    expect(testMap.get('carrot')).toBe('orange');  
+
+    expect(testMap.numElements <= testMap.capacity * testMap.loadFactor)
+    .toBeTruthy();
+    expect(testMap.numElements).toBe(12);
     
 })
 
@@ -40,4 +54,5 @@ test("Doubling buckets test", ()=>{
     expect(testMap.numElements <= testMap.capacity * testMap.loadFactor)
     .toBeTruthy();
     expect(testMap.numElements).toBe(13);
+    expect(testMap.capacity).toBe(32);
 })
